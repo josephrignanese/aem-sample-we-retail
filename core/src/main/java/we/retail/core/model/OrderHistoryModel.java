@@ -23,6 +23,7 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.TimeZone;
 
 import javax.annotation.PostConstruct;
 
@@ -162,6 +163,7 @@ public class OrderHistoryModel {
             }
 
             SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+            sdf.setTimeZone(TimeZone.getTimeZone("America/Los_Angeles"));
             return sdf.format(date) + index;
         }
 
